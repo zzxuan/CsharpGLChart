@@ -18,5 +18,6 @@ namespace GLFormsChart
         void ChartZoomTo(double minX, double minY, double maxX, double maxY);
         void ChartRecovery();
 
+        double[] ChartScrXYtoPix(double scrx, double scry);
     }
 }
