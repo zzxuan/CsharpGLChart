@@ -6,3 +6,9 @@ E:\git\CsharpGLChart\src\CsharpGlChartSample\GLFormsChart\obj\Debug\GLFormsChart
 E:\git\CsharpGLChart\src\CsharpGlChartSample\GLFormsChart\obj\Debug\GLFormsChart.GLChart.resources
 E:\git\CsharpGLChart\src\CsharpGlChartSample\GLFormsChart\obj\Debug\GenerateResource.read.1.tlog
 E:\git\CsharpGLChart\src\CsharpGlChartSample\GLFormsChart\obj\Debug\GenerateResource.write.1.tlog
+D:\work\git\CsharpGLChart\src\CsharpGlChartSample\GLFormsChart\bin\Debug\GLFormsChart.dll
+D:\work\git\CsharpGLChart\src\CsharpGlChartSample\GLFormsChart\bin\Debug\GLFormsChart.pdb
+D:\work\git\CsharpGLChart\src\CsharpGlChartSample\GLFormsChart\obj\Debug\GLFormsChart.GLChart.resources
+D:\work\git\CsharpGLChart\src\CsharpGlChartSample\GLFormsChart\obj\Debug\GLFormsChart.csproj.GenerateResource.Cache
+D:\work\git\CsharpGLChart\src\CsharpGlChartSample\GLFormsChart\obj\Debug\GLFormsChart.dll
+D:\work\git\CsharpGLChart\src\CsharpGlChartSample\GLFormsChart\obj\Debug\GLFormsChart.pdb

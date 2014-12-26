@@ -13,10 +13,13 @@ namespace GLFormsChart
 {
     public class GLChart : OpenGLControl
     {
+        int leftpad = 30, rightpad = 30,toppad=50,bottompad=30;
+        double minX, minY, maxX, maxY;
+        int refshInterval = 50;//刷新频率
         public GLChart()
         {
             Timer ti = new Timer();
-            ti.Interval = 20;
+            ti.Interval = refshInterval;
             ti.Tick += new EventHandler(ti_Tick);
             ti.Start();
         }
@@ -47,7 +50,7 @@ namespace GLFormsChart
             base.OnSizeChanged(e);
             GL.glMatrixMode(GL.GL_PROJECTION);     //  设置当前为投影矩阵
             GL.glLoadIdentity();    // 重置投影矩阵
-            GL.glOrtho(-10, 110, -10, 110, -100, 100);//正交投影
+            ChartZoomTo(0, 0, 100, 100);
             //GL.gluPerspective(100.0f, aspect_ratio, 0.0f, 1000.0f);
             GL.glMatrixMode(GL.GL_MODELVIEW); // 设置当前为模型视图矩阵 
             GL.glLoadIdentity();    // 重置模型视图矩阵
@@ -63,13 +66,13 @@ namespace GLFormsChart
             //GL.glClearColor(0.1f, 0.1f, 0.2f, 1.0f);
             GL.glClear(GL.GL_COLOR_BUFFER_BIT | GL.GL_DEPTH_BUFFER_BIT);
             GL.glLoadIdentity();
-            GL.glRotated(angle++, 1, 1, 0);
+            //GL.glRotated(angle++, 1, 1, 0);
             ////GL.glDisable(GL.GL_DEPTH_TEST);
             //GL.glEnable(GL.GL_LIGHTING);
             //GL.glEnable(GL.GL_LIGHT0);
             GL.gluLookAt(0, 0, 10, 0, 0, 0, 0, 1, 0);
             GL.glColor4f(0.1f, 0.1f, 0.2f, 1.0f);
-            GL.glRectf(0, 0, 100,100);
+            GL.glRectd(minX, minY, maxX, maxY);
             
             GL.glColor4f(0, 255, 0, 255);
             //Size sz = TextRenderer.MeasureText("大家好", new Font("宋体", 30));
@@ -79,6 +82,31 @@ namespace GLFormsChart
             line.DrawSelf();
             //glFont.PrintCN("曲线控件", new Font("黑体", 100), 50, 101, 0);
             GL.glFlush();
+        }
+        /// <summary>
+        /// 设置控件缩放
+        /// </summary>
+        /// <param name="minX"></param>
+        /// <param name="minY"></param>
+        /// <param name="maxX"></param>
+        /// <param name="maxY"></param>
+        public void ChartZoomTo(double minX, double minY, double maxX, double maxY)
+        {
+            this.maxX = maxX;
+            this.minX = minX;
+            this.minY = minY;
+            this.maxY = maxY;
+            double wl = Width - leftpad - rightpad;
+            double xx = (maxX - minX) / wl;
+            double x3 = minX - leftpad * xx;
+            double x4 = rightpad * xx + maxX;
+
+            double hl = Height - toppad - bottompad;
+            double yy = (maxY - minY) / hl;
+            double y3 = minY - bottompad * yy;
+            double y4 = maxY + toppad * yy;
+
+            GL.glOrtho(x3, x4, y3, y4, -100, 100);//正交投影
         }
     }
 }

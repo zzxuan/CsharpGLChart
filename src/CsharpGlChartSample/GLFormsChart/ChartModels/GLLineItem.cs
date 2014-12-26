@@ -53,5 +53,15 @@ namespace GLFormsChart.ChartModels
             GL.glLineWidth(lineWidth);
             GLHelper.GLDrawPolyLine(ptr, xptslist.Count * 3, clr);
         }
+
+        public void OnCreat(OpenGLControl glCtrl)
+        {
+            //throw new NotImplementedException();
+        }
+
+        public void OnCreat(GLChart glCtrl)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

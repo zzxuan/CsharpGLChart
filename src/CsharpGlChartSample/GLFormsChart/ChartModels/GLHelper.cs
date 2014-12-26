@@ -47,7 +47,7 @@ namespace GLFormsChart.ChartModels
         {
             GL.glVertexPointer(3, GL.GL_FLOAT, 0, ptr);
             GL.glEnableClientState(GL.GL_VERTEX_ARRAY);
-            GL.glColor4f(col.R / 255f, col.G / 255f, col.B / 255f, col.A / 255f);
+            glColor(col);
             GL.glEnableClientState(GL.GL_TEXTURE_COORD_ARRAY);
             GL.glDrawArrays(GL.GL_LINE_STRIP, 0, length / 3);
             GL.glDisableClientState(GL.GL_VERTEX_ARRAY);
@@ -62,6 +62,11 @@ namespace GLFormsChart.ChartModels
             pszSendData0 = Marshal.AllocHGlobal(flos.Length * 4);
             Marshal.Copy(flos, 0, pszSendData0, flos.Length);
             return pszSendData0;
+        }
+
+        public static void glColor(Color col)
+        {
+            GL.glColor4f(col.R / 255f, col.G / 255f, col.B / 255f, col.A / 255f);
         }
     }
 }

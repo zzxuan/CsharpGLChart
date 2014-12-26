@@ -12,6 +12,9 @@ namespace GLFormsChart
 {
     public class GLFont
     {
+        public static GLFont Instance = new GLFont();
+
+
         #region 私有字段
         protected IntPtr hDC = Win32.GetDC(IntPtr.Zero);             //暂存与交换字体句柄
         protected IntPtr m_hFont;         //新字体句柄

@@ -50,5 +50,11 @@ namespace GLFormsChart.ChartModels
                 item.DrawSelf();
             }
         }
+
+
+        public void OnCreat(GLChart glCtrl)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
