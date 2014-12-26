@@ -1,0 +1,8 @@
+E:\git\CsharpGLChart\src\CsharpGlChartSample\GLFormsChart\bin\Debug\GLFormsChart.dll
+E:\git\CsharpGLChart\src\CsharpGlChartSample\GLFormsChart\bin\Debug\GLFormsChart.pdb
+E:\git\CsharpGLChart\src\CsharpGlChartSample\GLFormsChart\obj\Debug\ResolveAssemblyReference.cache
+E:\git\CsharpGLChart\src\CsharpGlChartSample\GLFormsChart\obj\Debug\GLFormsChart.dll
+E:\git\CsharpGLChart\src\CsharpGlChartSample\GLFormsChart\obj\Debug\GLFormsChart.pdb
+E:\git\CsharpGLChart\src\CsharpGlChartSample\GLFormsChart\obj\Debug\GLFormsChart.GLChart.resources
+E:\git\CsharpGLChart\src\CsharpGlChartSample\GLFormsChart\obj\Debug\GenerateResource.read.1.tlog
+E:\git\CsharpGLChart\src\CsharpGlChartSample\GLFormsChart\obj\Debug\GenerateResource.write.1.tlog

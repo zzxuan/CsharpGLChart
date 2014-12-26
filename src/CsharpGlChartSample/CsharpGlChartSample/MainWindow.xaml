@@ -1,0 +1,11 @@
+﻿<Window x:Class="CsharpGlChartSample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:chart="clr-namespace:GLFormsChart;assembly=GLFormsChart"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <WindowsFormsHost Name="windowsFormsHost1" >
+            <chart:GLChart/>
+        </WindowsFormsHost>
+    </Grid>
+</Window>
