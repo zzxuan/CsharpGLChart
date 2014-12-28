@@ -6,12 +6,8 @@ using CsGL.OpenGL;
 
 namespace GLFormsChart
 {
-    public interface IGLItem
+    public partial class GLChart 
     {
-
-        void OnCreat(GLChart glCtrl);
-
-        void DrawSelf();
 
     }
 }

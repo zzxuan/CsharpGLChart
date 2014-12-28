@@ -26,30 +26,62 @@ namespace GLFormsChart.ChartModels
         Color cl;
         GLTextMode glmode;
         private Font font;
-        public GLText(string text, Color cl, float locationX, float locationY, Font font=null, GLTextMode glmode = GLTextMode.Center)
+        public GLText(GLChart glCtrl,string text, Color cl, float locationX, float locationY, Font font=null, GLTextMode glmode = GLTextMode.Center)
         {
             this.text = text;
             this.cl = cl;
             this.glmode = glmode;
-            this.font = font == null ? new Font("宋体", 30) : font;
+            this.font = font == null ? new Font("Comic Sans MS", 20) : font;
+            this.locationX = locationX;
+            this.locationY = locationY;
+            this.glCtrl = glCtrl;
+            getPad();
+        }
+
+        float padx = 0, pady = 0;
+        private float locationX;
+        float locationY;
+        void getPad()
+        {
+            Size sz = TextRenderer.MeasureText(text, font);
+            float w =(float)(glCtrl.ChartX(sz.Width) - glCtrl.ChartX(0));
+            float h = (float)(-glCtrl.ChartY(sz.Height) + glCtrl.ChartY(0));
+            switch (glmode)
+            {
+                case GLTextMode.Center:
+                    padx = (float)(-0.5 * w);
+                    pady = (float)(+0.5 * h);
+                    break;
+                case GLTextMode.CenterBottom:
+                    padx = (float)(-0.25 * w);
+                    pady = (float)(0);
+                    break;
+                case GLTextMode.RightCenter:
+                    padx = (float)(-0.5*w);
+                    pady = (float)(-0.25 * h);
+                    break;
+                case GLTextMode.CenterTop:
+                    padx = (float)(-0.25 * w);
+                    pady = (float)(-0.5 * h);
+                    break;
+                case GLTextMode.LeftBottom:
+                    padx = 0f;
+                    pady = 0f;
+                    break;
+            }
         }
 
         public void DrawSelf()
         {
-            GL.glColor4f(0, 255, 0, 255);
-
-            Size sz = TextRenderer.MeasureText(text, font);
-
-
-
-            //Size sz = TextRenderer.MeasureText("大家好", new Font("宋体", 30));
-            //glFont.PrintCN("大家好", new Font("宋体", 30), 0 - (120f / Width) * sz.Width * 0.5f, 0 - (120f / Height) * sz.Height * 0.6f, 0);
-
+            GLHelper.glColor(cl);
+            GLFont.Instance.PrintCN(text, font, locationX + padx, locationY + pady, 0);
         }
 
         public void OnCreat(GLChart glCtrl)
         {
-            this.glCtrl = glCtrl;
+
         }
+
+
     }
 }

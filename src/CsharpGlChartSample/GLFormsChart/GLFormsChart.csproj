@@ -52,6 +52,9 @@
     <Compile Include="ChartModels\GLHelper.cs" />
     <Compile Include="ChartModels\GLLineItem.cs" />
     <Compile Include="ChartModels\GLText.cs" />
+    <Compile Include="GLChart.API.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="GLChart.cs">
       <SubType>Component</SubType>
     </Compile>
