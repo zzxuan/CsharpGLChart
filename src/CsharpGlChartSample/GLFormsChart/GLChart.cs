@@ -13,28 +13,26 @@ namespace GLFormsChart
 {
     public partial class GLChart : OpenGLControl
     {
+        IGLView _ChartView = null;
         List<IGLItem> _GLItems = new List<IGLItem>();
         int leftpad = 100, rightpad = 30,toppad=50,bottompad=30;
-        double minX, minY, maxX, maxY;
+        internal double minX, minY, maxX, maxY;
         string title = "OPENGL曲线控件";
-        int refshInterval = 50;//刷新频率
-        GLGridItem grid;
+
         GLText titletext;
         public GLChart()
         {
-            Timer ti = new Timer();
-            ti.Interval = refshInterval;
-            ti.Tick += new EventHandler(ti_Tick);
-            ti.Start();
-            Init();
+
         }
 
-        void Init()
+        public void Init(double minX, double minY, double maxX, double maxY, CharMode mode = CharMode.Curve)
         {
-        }
-        void ti_Tick(object sender, EventArgs e)
-        {
-            Refresh();
+            ChartZoomTo(minX, minY, maxX, maxY);
+            if (mode == CharMode.Curve)
+            {
+                _ChartView = new GLCurveView();
+            }
+            _ChartView.OnCreat(this);
         }
 
         protected override void InitGLContext()// 此处开始对OpenGL进行所有设置
@@ -58,13 +56,14 @@ namespace GLFormsChart
             base.OnSizeChanged(e);
             GL.glMatrixMode(GL.GL_PROJECTION);     //  设置当前为投影矩阵
             GL.glLoadIdentity();    // 重置投影矩阵
-            ChartZoomTo(-50, -43, 100, 100);
+            ChartZoomTo(minX, minY, maxX, maxY);
             //GL.gluPerspective(100.0f, aspect_ratio, 0.0f, 1000.0f);
             GL.glMatrixMode(GL.GL_MODELVIEW); // 设置当前为模型视图矩阵 
             GL.glLoadIdentity();    // 重置模型视图矩阵
-            grid = new GLGridItem((float)minX, (float)maxX, (float)minY, (float)maxY, 10, 10, Color.FromArgb(100, 0x36, 0x64, 0x8B), Color.FromArgb(100, 0x36, 0x64, 0x8B));
-            grid.OnCreat(this);
+
             titletext = new GLText(this, title, Color.Blue, (float)(0.5 * (maxX - minX) + minX), (float)(maxY + ChartH(10)), new Font("Comic Sans MS", 50), GLTextMode.CenterBottom);
+
+            _ChartView.OnSizeChange();
         }
 
 
@@ -77,7 +76,9 @@ namespace GLFormsChart
             GL.glColor4f(0.1f, 0.1f, 0.2f, 1.0f);
             GL.glRectd(minX, minY, maxX, maxY);
             titletext.DrawSelf();
-            grid.DrawSelf();
+            
+
+            _ChartView.OnDrawSelf();
 
             lock (_GLItems)
             {
@@ -92,6 +93,14 @@ namespace GLFormsChart
         {
             _GLItems.Add(item);
             item.OnCreat(this);
+        }
+
+        public void RemoveGLitems(IGLItem item)
+        {
+            if (_GLItems.Contains(item))
+            {
+                _GLItems.Remove(item);
+            }
         }
 
 

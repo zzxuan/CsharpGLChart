@@ -7,7 +7,7 @@ using CsGL.OpenGL;
 
 namespace GLFormsChart.ChartModels
 {
-    class GLLineItem:IGLItem
+    public class GLLineItem:IGLItem
     {
         List<double> xptslist = new List<double>();
         List<double> yptslist = new List<double>();

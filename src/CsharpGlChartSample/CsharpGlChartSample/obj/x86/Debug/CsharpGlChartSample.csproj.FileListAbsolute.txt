@@ -2,15 +2,12 @@ E:\git\CsharpGLChart\src\CsharpGlChartSample\CsharpGlChartSample\bin\Debug\Cshar
 E:\git\CsharpGLChart\src\CsharpGlChartSample\CsharpGlChartSample\bin\Debug\CsharpGlChartSample.pdb
 E:\git\CsharpGLChart\src\CsharpGlChartSample\CsharpGlChartSample\bin\Debug\GLFormsChart.dll
 E:\git\CsharpGLChart\src\CsharpGlChartSample\CsharpGlChartSample\bin\Debug\GLFormsChart.pdb
-E:\git\CsharpGLChart\src\CsharpGlChartSample\CsharpGlChartSample\obj\x86\Debug\ResolveAssemblyReference.cache
 E:\git\CsharpGLChart\src\CsharpGlChartSample\CsharpGlChartSample\obj\x86\Debug\MainWindow.baml
 E:\git\CsharpGLChart\src\CsharpGlChartSample\CsharpGlChartSample\obj\x86\Debug\MainWindow.g.cs
 E:\git\CsharpGLChart\src\CsharpGlChartSample\CsharpGlChartSample\obj\x86\Debug\App.g.cs
 E:\git\CsharpGLChart\src\CsharpGlChartSample\CsharpGlChartSample\obj\x86\Debug\CsharpGlChartSample_MarkupCompile.cache
 E:\git\CsharpGLChart\src\CsharpGlChartSample\CsharpGlChartSample\obj\x86\Debug\CsharpGlChartSample.g.resources
 E:\git\CsharpGLChart\src\CsharpGlChartSample\CsharpGlChartSample\obj\x86\Debug\CsharpGlChartSample.Properties.Resources.resources
-E:\git\CsharpGLChart\src\CsharpGlChartSample\CsharpGlChartSample\obj\x86\Debug\GenerateResource.read.1.tlog
-E:\git\CsharpGLChart\src\CsharpGlChartSample\CsharpGlChartSample\obj\x86\Debug\GenerateResource.write.1.tlog
 E:\git\CsharpGLChart\src\CsharpGlChartSample\CsharpGlChartSample\obj\x86\Debug\CsharpGlChartSample.exe
 E:\git\CsharpGLChart\src\CsharpGlChartSample\CsharpGlChartSample\obj\x86\Debug\CsharpGlChartSample.pdb
 D:\work\git\CsharpGLChart\src\CsharpGlChartSample\CsharpGlChartSample\obj\x86\Debug\CsharpGlChartSample.exe
@@ -27,3 +24,5 @@ D:\work\git\CsharpGLChart\src\CsharpGlChartSample\CsharpGlChartSample\obj\x86\De
 D:\work\git\CsharpGLChart\src\CsharpGlChartSample\CsharpGlChartSample\obj\x86\Debug\CsharpGlChartSample.g.resources
 D:\work\git\CsharpGLChart\src\CsharpGlChartSample\CsharpGlChartSample\obj\x86\Debug\CsharpGlChartSample.Properties.Resources.resources
 D:\work\git\CsharpGLChart\src\CsharpGlChartSample\CsharpGlChartSample\obj\x86\Debug\CsharpGlChartSample.csproj.GenerateResource.Cache
+E:\git\CsharpGLChart\src\CsharpGlChartSample\CsharpGlChartSample\obj\x86\Debug\CsharpGlChartSample.csprojResolveAssemblyReference.cache
+E:\git\CsharpGLChart\src\CsharpGlChartSample\CsharpGlChartSample\obj\x86\Debug\CsharpGlChartSample.csproj.GenerateResource.Cache

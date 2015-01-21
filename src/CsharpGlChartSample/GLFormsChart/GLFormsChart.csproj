@@ -47,21 +47,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CharMode.cs" />
     <Compile Include="ChartContants.cs" />
     <Compile Include="ChartModels\GLGridItem.cs" />
     <Compile Include="ChartModels\GLHelper.cs" />
     <Compile Include="ChartModels\GLLineItem.cs" />
     <Compile Include="ChartModels\GLText.cs" />
-    <Compile Include="GLChart.API.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="GLChart.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="View\GLCurveView.cs" />
     <Compile Include="GLFont.cs" />
-    <Compile Include="IChartAPI.cs" />
+    <Compile Include="Interface\IGLView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="IGLItem.cs" />
+    <Compile Include="Interface\IGLItem.cs" />
     <Compile Include="Win32.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
